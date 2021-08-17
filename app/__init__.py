@@ -1,3 +1,9 @@
 from flask import Flask
-app = Flask(__name__)
-from app import views
+
+
+def App():
+
+    app = Flask(__name__)
+    app.config['SECRET_KEY'] = 'fsqdsdqgsdgsqgqsgqs'
+    
+    return app

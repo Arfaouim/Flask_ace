@@ -1,3 +1,6 @@
-from app import app
+from app import App
+
+
+app = App()
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
