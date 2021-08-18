@@ -15,6 +15,12 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Pacifico" />
+
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="{{ url_for('static', filename='CSS/blood.css') }}"
+    />
     <title>{% block title %}Home{% endblock %}</title>
   </head>
   <body>
@@ -31,6 +37,7 @@
         <div class="navbar-nav">
           {% if user.is_authenticated %}
           <a class="nav-item nav-link" id="home" href="/">Home</a>
+          <a class="nav-item nav-link" id="blood" href="/blood">Blood</a>
           <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
           {% else %}
           <a class="nav-item nav-link" id="login" href="/login">Login</a>
@@ -43,7 +50,7 @@
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">{%block username %}{%endblock%}</a>
+                    <span style="font-family:pacifico;font-size:30px;color: aliceblue;" >{%block username %}{%endblock%}</span>
                 </li>
             </ul>
         </div>
@@ -87,6 +94,10 @@
     <script
       type="text/javascript"
       src="{{ url_for('static', filename='JS/index.js') }}"
+    ></script>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='JS/blood.js') }}"
     ></script>
   </body>
 </html>

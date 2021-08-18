@@ -36,3 +36,8 @@ def delete_note():
 
     return jsonify({})
     
+
+@views.route('/blood')
+@login_required
+def blood(): 
+     return render_template("blood.html", user=current_user)
