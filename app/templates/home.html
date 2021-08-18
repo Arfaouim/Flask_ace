@@ -2,10 +2,10 @@
     {% block title %}Home{% endblock %} 
         {%block username %}Welcome, {{user.first_name}} {%endblock%}
         {% block content%}
-        <h1 align="center">Notes</h1>
+        <h1 align="center" style="font-family:pacifico;">Notebook</h1>
             <ul class="list-group list-group-flush" id="notes">
                 {% for note in user.notes %}
-                <li class="list-group-item">
+                <li style="font-family:pacifico;" class="list-group-item">
                     {{ note.data }}
                     
                     <button type="button" class="close" onClick="deleteNote({{ note.id }})">
@@ -15,16 +15,17 @@
                 <small class="font-weight-light text-right">{{ note.date }}</small>
                 {% endfor %}
             </ul>
-        <form method="POST">
-            <textarea name="note" id="note" class="form-control"></textarea>
-            <br />
-                <form method="POST" action="/upload">
-                    <div class="from-group">
-                        <input type="file" name="inputfile">
-                    </div>
-                </form>
+        <form method="POST" enctype="multipart/form-data" >
+            <div class="form-outline">
+                <textarea  style="font-family:pacifico;" name="note" id="note" class="form-control" ></textarea>
+                <label class="form-label" for="note">Notes</label>
+            </div>          
+            
+            
+            
             <div align="center">
                 <button type="submit" class="btn btn-primary">Add Note</button>
             </div>
         </form>
+
         {% endblock %}

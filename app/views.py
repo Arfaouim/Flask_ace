@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, flash, jsonify
 from flask_login import login_required, current_user
-from .models import FileContents, Note
+from .models import Note
 from . import db
 import json
 
@@ -35,14 +35,4 @@ def delete_note():
             db.session.commit()
 
     return jsonify({})
-
-
-@views.route('/upload', methods=['POST'])
-def upload():
-    file = request.files["inputFile"]
-    new_file = FileContents(name = file.filename, data = file.read())
-    db.session.add(new_file)
-    db.session.commit()
-
-
-    return file.filename
+    
