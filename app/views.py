@@ -37,7 +37,10 @@ def delete_note():
     return jsonify({})
     
 
-@views.route('/blood')
-@login_required
-def blood(): 
-     return render_template("blood.html", user=current_user)
+@views.route('/Math',methods=['GET', 'POST'])
+@login_required   
+def calc():
+    a = request.form.get('a', '0')
+    b = request.form.get('b', '0')
+    result= str(float(a) + float(b))
+    return render_template("Math.html",result=result, user=current_user)
