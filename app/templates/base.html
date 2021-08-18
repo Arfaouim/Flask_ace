@@ -36,8 +36,17 @@
           <a class="nav-item nav-link" id="login" href="/login">Login</a>
           <a class="nav-item nav-link" id="signUp" href="/sign-up">Sign Up</a>
           {% endif %}
+          
+          
         </div>
       </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">{%block username %}{%endblock%}</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 
     {% with messages = get_flashed_messages(with_categories=true) %} {% if
