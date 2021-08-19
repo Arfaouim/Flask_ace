@@ -1,15 +1,10 @@
-from flask import Blueprint, render_template, request, flash, jsonify,Response
+from flask import Blueprint, render_template, request, flash, jsonify
 from flask_login import login_required, current_user
 from .models import Note
 from . import db
 import json
-import matplotlib.pyplot as plt
-from numpy import*
-import io
-import base64
-from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
-from matplotlib.figure import Figure
-import random
+from sympy.solvers import solve
+from sympy import Symbol, integrate, init_printing, latex
 
 views = Blueprint('views', __name__)
 
@@ -47,33 +42,29 @@ def delete_note():
 @views.route('/Math',methods=['GET', 'POST'])
 @login_required   
 def calc():
-    a = request.form.get('a', '0')
-    b = request.form.get('b', '0')
-    result= str(float(a) + float(b))
-    return render_template("Math.html",result=result, user=current_user)
+    #Global Variable for output
+    global result, res, intg
+
+    init_printing()
+    x = Symbol('x')
+    try:
+        # Input Data
+        a = request.form.get('a', '0')
+        b = request.form.get('b', '0')
+        f = request.form.get('f', '0')
+        i = request.form.get('i', '0')
+
+        # Results
+        # 1 Sommation
+        result= str(float(a) + float(b))
+        # 2 Equation roots
+        res = str(solve(f, x))
+        # 3 Integrate a function
+        intg = latex(integrate(i, x))
 
 
-@views.route('/plot.png')
-@login_required   
-def plot()->None:
-    """Generating a simple plot for a given function 
 
-    Returns:
-        [type]: [description]
-    """
-    fig = create_figure()
-    output = io.BytesIO()
-    FigureCanvas(fig).print_png(output)
-    return Response(output.getvalue(), mimetype='image/png')
+    except Exception as e:    
+        flash('The input field is incorrect/empty, Please check your data.', category='error')
+    return render_template("Math.html", result=result, res=res, intg=intg, user=current_user)
 
-
-@views.route('/Math',methods=['GET'])
-@login_required  
-def create_figure():
-    function = request.form.get('function', '0')
-    fig = Figure()
-    axis = fig.add_subplot(1, 1, 1)
-    xs = arange(0,100)
-    ys = eval(function(xs))
-    axis.plot(xs, ys)
-    return fig

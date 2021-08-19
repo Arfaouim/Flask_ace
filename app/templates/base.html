@@ -14,12 +14,19 @@
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://static.gabia.com/gtris/gashboard.css"
+      crossorigin="anonymous"
+    />
+
+    
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Pacifico" />
 
     <link
       type="text/css"
       rel="stylesheet"
-      href="{{ url_for('static', filename='CSS/blood.css') }}"
+      href="{{ url_for('static', filename='/CSS/Math.css') }}"
     />
     <title>{% block title %}Home{% endblock %}</title>
   </head>
@@ -104,11 +111,11 @@
 
     <script
       type="text/javascript"
-      src="{{ url_for('static', filename='JS/index.js') }}"
+      src="{{ url_for('static', filename='/JS/index.js') }}"
     ></script>
     <script
       type="text/javascript"
-      src="{{ url_for('static', filename='JS/blood.js') }}"
+      src="{{ url_for('static', filename='/JS/Math.js') }}"
     ></script>
   </body>
 </html>

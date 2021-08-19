@@ -3,22 +3,49 @@
 {%block username %}Welcome, {{user.first_name}} {%endblock%}
 {% block content%}
 
-<h1>Simple addition Calculation</h1>
+<div style="margin:10px;"  class="w3-container g-info">
+    <p style="block">Simple addition Calculation</p>
+</div>
+<div class="w3-container ">
+    <form method="POST" action="">
+        <input name="a">
+        <input name="b">
+        <input type="submit" value="Compute">
+        <h3>The result is: {{ result }}</h3>
+    </form>
+    </div>
+</hr>
 
-<form method="POST" action="">
-    <input name="a">
-    <input name="b">
-    <input type="submit" value="Compute">
-    <h3>The result is: {{ result }}</h3>
-</form>
+<div style="margin:10px;" class="w3-container g-info">
+    <p>Find roots for an equation</p>
+</div>
+  
+  <div class="w3-container ">
+    <form method="POST" action="">
+        <label id="f">function:</label>
+        <input id="f" name="f">
+        <input type="submit" value="Compute">
+        <h3>The result is: {{ res }}</h3>
+    </form>
+  </div>
+</hr>
 
-<h1>Simple Plot</h1>
+<div style="margin:10px;" class="w3-container g-info">
+  <div class="tooltip">Hover over me
+    <span class="tooltiptext">Tooltip text</span>
+  </div>
+</div>
+  
+  <div class="w3-container ">
+    <form method="POST" action="">
+        <label id="i">Integrals:</label>
+        <input id="i" name="i">
+        <input type="submit" value="Compute">
+        <h3>The result is:\[{{ intg }}\]</h3>
+    </form>
+  </div>
+</hr>
 
-<form method="POST" action="">
-    <input name="function">
-    <input type="submit" value="Compute">
-    <img src="/plot.png" alt="my plot">
-</form>
 
 {% endblock %}
 
