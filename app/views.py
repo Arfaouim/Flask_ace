@@ -11,7 +11,6 @@ init_printing,
 latex,
 limit,
 diff)
-import io
 from sympy.plotting import plot
 
 views = Blueprint('views', __name__)

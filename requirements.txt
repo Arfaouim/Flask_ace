@@ -3,3 +3,7 @@ Flask-SQLAlchemy
 flask-login
 gunicorn
 Werkzeug
+sympy
+sympy.solvers
+sympy.abc
+sympy.plotting
