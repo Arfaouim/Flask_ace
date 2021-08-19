@@ -8,10 +8,14 @@
 </div>
 <div class="w3-container ">
     <form method="POST" action="">
-        <input name="a">
-        <input name="b">
+        <input name="a" placeholder="Input a number">
+        <input name="b" placeholder="Input a number">
         <input type="submit" value="Compute">
-        <h3>The result is: {{ result }}</h3>
+        <div style="color: #270;background-color: #DFF2BF;">
+          <i class="fa fa-check"></i>
+          <h3>The result is: {{ result }}</h3>
+        </div>
+        
     </form>
     </div>
 </hr>
@@ -23,28 +27,43 @@
   <div class="w3-container ">
     <form method="POST" action="">
         <label id="f">function:</label>
-        <input id="f" name="f">
+        <input id="f" name="f" placeholder="Function">
         <input type="submit" value="Compute">
-        <h3>The result is: {{ res }}</h3>
+        <div style="color: #270;background-color: #DFF2BF;">
+          <i class="fa fa-check"></i>
+          <h3>The result is: {{ res }}</h3>
+        </div>
+        
     </form>
   </div>
 </hr>
 
 <!--Integral Block -->
 <div style="margin:10px;" class="w3-container g-info">
-  Integrals
+  indefinite Integrals
 </div>
 <div style="color: #059;background-color: #BEF;margin:10px;"class="info-msg">
   <i class="fa fa-info-circle"></i>
   integrate(f, x) returns the indefinite integral \[\int f\,dx\]
+  integrate(f, (x, a, b)) returns the definite integral  \[\int_{a}^{b} f\,dx\]
+
 </div>
   
   <div class="w3-container ">
     <form method="POST" action="">
-        <label id="i">Integrals: <span style="font-size: 30px;">&#8747;</span></label>
-        <input id="i" name="i">
+        <!--Defined Int-->
+        <label id="di">Definite Integrals: <span style="font-size: 30px;">&#8747;</span></label>
+        <label for="bmin" style="font-family:pacifico;">Min Born</label>
+        <input id="bmin"name="bmin" size="4" placeholder="B-min">
+        <label for="bmax" style="font-family:pacifico;">Max Born</label>
+        <input id="bmax"name="bmax" size="4" placeholder="B-max">
+        <input id="di" name="di" placeholder="Function">
         <input type="submit" value="Compute">
-        <h3>The result is:\[{{ intg }}\]</h3>
+        <div style="color: #270;background-color: #DFF2BF;">
+          <i class="fa fa-check"></i>
+          <h3>The result is:\[{{ dintg }}\]</h3>
+        </div>
+        
     </form>
   </div>
 </hr>
@@ -62,15 +81,42 @@
   <div class="w3-container ">
     <form method="POST" action="">
         <label id="l1" style="font-family:pacifico;">Lim x -></label>
-        <input id="l1" name="x_value">
+        <input id="l1" name="x_value" placeholder="x tends towards">
         <label id="l2" style="font-family:pacifico;">f(x):</label>
-        <input id="l2" name="f_value">
+        <input id="l2" name="f_value" placeholder="Function">
         <input type="submit" value="Compute">
-        <h3>The result is:\[{{ limit }}\]</h3>
+        <div style="color: #270;background-color: #DFF2BF;">
+          <i class="fa fa-check"></i>
+          <h3>The result is:\[{{ limite }}\]</h3>
+        </div>
+        
     </form>
   </div>
 </hr>
 
+<!--Derivatives Block -->
+<div style="margin:10px;" class="w3-container g-info">
+  Derivatives Block
+</div>
+<div style="color: #059;background-color: #BEF;margin:10px;"class="info-msg">
+  <i class="fa fa-info-circle"></i>
+  The main purpose of this block basic calculus tasks such as derivatives.
+</div>
+  
+  <div class="w3-container ">
+    <form method="POST" action="">
 
+        <label id="p" style="font-family:pacifico;">f(x):</label>
+        <input id="p" name="diff_f" placeholder="Put the function">
+        <input type="submit" value="Compute">
+        <div style="color: #270;background-color: #DFF2BF;">
+          <i class="fa fa-check"></i>
+          <h3>The result is:</h3>
+          \[{{dif}}\]
+        </div>
+        
+    </form>
+  </div>
+</hr>
 {% endblock %}
 
