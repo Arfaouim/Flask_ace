@@ -30,18 +30,43 @@
   </div>
 </hr>
 
+<!--Integral Block -->
 <div style="margin:10px;" class="w3-container g-info">
-  <div class="tooltip">Hover over me
-    <span class="tooltiptext">Tooltip text</span>
-  </div>
+  Integrals
+</div>
+<div style="color: #059;background-color: #BEF;margin:10px;"class="info-msg">
+  <i class="fa fa-info-circle"></i>
+  integrate(f, x) returns the indefinite integral \[\int f\,dx\]
 </div>
   
   <div class="w3-container ">
     <form method="POST" action="">
-        <label id="i">Integrals:</label>
+        <label id="i">Integrals: <span style="font-size: 30px;">&#8747;</span></label>
         <input id="i" name="i">
         <input type="submit" value="Compute">
         <h3>The result is:\[{{ intg }}\]</h3>
+    </form>
+  </div>
+</hr>
+
+<!--Limit Block -->
+<div style="margin:10px;" class="w3-container g-info">
+  Limits
+</div>
+<div style="color: #059;background-color: #BEF;margin:10px;"class="info-msg">
+  <i class="fa fa-info-circle"></i>
+  The main purpose of this block is the computation of limits.\[ \lim_{x\to\infty} f(x) \]
+  Here f is the input function where we look for its value for \[x\to + \infty\]
+</div>
+  
+  <div class="w3-container ">
+    <form method="POST" action="">
+        <label id="l1" style="font-family:pacifico;">Lim x -></label>
+        <input id="l1" name="x_value">
+        <label id="l2" style="font-family:pacifico;">f(x):</label>
+        <input id="l2" name="f_value">
+        <input type="submit" value="Compute">
+        <h3>The result is:\[{{ limit }}\]</h3>
     </form>
   </div>
 </hr>
