@@ -1,0 +1,43 @@
+a{
+    text-decoration: none;
+}  
+.shadow{
+    box-shadow: 7px 7px 7px #666;
+    position : relative;
+    transition : all 0.2s;
+    top : 0;
+}
+
+.color-hover:hover{
+color : #0faf3f;
+}
+
+.up-hover:hover {
+  top :-8px;
+  box-shadow: 15px 15px 15px #777;
+}
+
+.cust-caption a{
+  color:white;
+  
+  text-shadow:1px 1px 2px black;
+}
+logo{
+    padding-top:50px;
+  }
+  
+  .logo img{
+    position:relative;
+    width:100%;
+    max-width : 450px;
+    margin:auto;
+  }
+  .showcase{
+    text-align:center;
+    padding-top:60px;
+  }
+  
+  .showcase h1{
+  font-size : 8em;
+  }
+  

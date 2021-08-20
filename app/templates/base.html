@@ -14,6 +14,7 @@
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
       crossorigin="anonymous"
     />
+
     <link
       rel="stylesheet"
       href="https://static.gabia.com/gtris/gashboard.css"
@@ -27,6 +28,11 @@
       type="text/css"
       rel="stylesheet"
       href="{{ url_for('static', filename='/CSS/Math.css') }}"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="{{ url_for('static', filename='/CSS/base_.css') }}"
     />
     <title>{% block title %}Home{% endblock %}</title>
   </head>
@@ -43,14 +49,34 @@
       <div class="collapse navbar-collapse" id="navbar">
         <div class="navbar-nav">
           {% if user.is_authenticated %}
-          <a class="nav-item nav-link" id="home" href="/">Home</a>
-          <a class="nav-item nav-link" id="Math" href="/Math">Math</a>
-          <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
-          {% else %}
-          <a class="nav-item nav-link" id="login" href="/login">Login</a>
-          <a class="nav-item nav-link" id="signUp" href="/sign-up">SignUp</a>
-          {% endif %}
-          
+              <!--Home-->
+              <a style="display: block;"class="nav-item nav-link" id="home" href="/">
+                <i style="color: white;font-size: 2em;"class='nav-item nav-link fa fa-home' title="Home page"></i>
+                
+              </a>
+           
+              <!--Tools-->
+              
+              <a class="nav-item nav-link" id="tools" href="/tools" >
+                <i style="color: white;font-size: 2em;"class='nav-item nav-link fa fa-book' title="Tools page"></i>
+                
+              </a>
+            
+              <!--Logout-->
+              <a class="nav-item nav-link" id="logout" href="/logout">
+                <i style="color: white;font-size: 2em;"class="nav-item nav-link fa fa-sign-out" aria-hidden="true" title="Logout"></i>
+                
+              </a>
+            
+            {% else %}
+            
+              <a class="nav-item nav-link" id="login" href="/login">Login</a>
+            
+             
+              <a class="nav-item nav-link" id="signUp" href="/sign-up">SignUp</a>
+            
+            {% endif %}
+            
           
         </div>
       </div>

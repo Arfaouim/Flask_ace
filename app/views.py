@@ -11,7 +11,6 @@ init_printing,
 latex,
 limit,
 diff)
-from sympy.plotting import plot
 
 views = Blueprint('views', __name__)
 
@@ -45,6 +44,16 @@ def delete_note():
 
     return jsonify({})
     
+
+@views.route('/tools')
+@login_required   
+def tools():
+    return render_template("tools.html",  user=current_user)
+
+@views.route('/math-list')
+@login_required   
+def math_list():
+    return render_template("math-list.html",  user=current_user)    
 
 @views.route('/Math',methods=['GET', 'POST'])
 @login_required   
@@ -90,3 +99,7 @@ def calc():
     return render_template("Math.html", result=result, res=res, dintg=dintg, dif=dif, limite=limite, user=current_user)
 
 
+@views.route('/Notebook')
+@login_required   
+def Notebook():
+    return render_template("Notebook.html",  user=current_user)    

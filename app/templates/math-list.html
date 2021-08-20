@@ -1,0 +1,33 @@
+{% extends "base.html" %} 
+{% block title %}Math List{% endblock %} 
+{%block username %}Welcome, {{user.first_name}} {%endblock%}
+{% block content%}
+    <div class="container">
+
+        <div class="row showcase stm-font">
+            <div class="col-sm-4 hidden-xs">
+                <div class="well shadow up-hover color-hover">
+                    <a style="text-decoration: none;" href="Math">                        
+                        <img width="193" height="130"src="{{url_for('static',filename = 'images/math.svg')}}">
+                        <h2 style="font-family: pacifico;">calculus </h2>
+                    </a>
+                </div>                  
+            </div>
+
+
+        </div>
+    </div>
+
+    <!-- Links & Scripts-->  
+
+    <link
+    type="text/css"
+    rel="stylesheet"
+    href="{{ url_for('static', filename='/CSS/tools.css') }}"
+    />
+    <script
+    type="text/javascript"
+    src="{{ url_for('static', filename='/JS/tools.js') }}"
+    ></script>
+
+{% endblock %}

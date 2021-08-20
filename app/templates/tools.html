@@ -1,0 +1,52 @@
+{% extends "base.html" %} 
+{% block title %}Tools{% endblock %} 
+{%block username %}Welcome, {{user.first_name}} {%endblock%}
+{% block content%}
+      <div class="container">
+        <div class="row showcase stm-font">
+          <!--Math-->
+          <div class="col-sm-4 hidden-xs">
+            <div class="well shadow up-hover color-hover">
+              <a style="text-decoration: none;" href="math-list">
+                <h1><i class='fa fa-calculator'></i></h1>
+                <h2 style="font-family: pacifico;">Math</h2>
+              </a>
+            </div>           
+          </div>
+
+          <div class="col-sm-4 hidden-xs">
+            <div class="well shadow up-hover color-hover">
+              <a style="text-decoration: none;" href="Notebook">
+              <h1 ><i class="fa fa-pencil-square-o"></i></h1>
+              <h2 >NoteBook</h2>
+              </a>
+            </div>  
+          </div>
+
+          <div class="col-sm-4 hidden-xs">
+            <div class="well shadow up-hover color-hover">
+              <h1 ><i class="fa fa-code"></i></h1>
+              <h2 >Development</h2>
+            </div>
+          </div>
+
+          <div class="col-sm-4 hidden-xs">
+            <div class="well shadow up-hover color-hover">
+              <h1 ><i class="fa fa-code"></i></h1>
+              <h2 >Development</h2>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <link
+      type="text/css"
+      rel="stylesheet"
+      href="{{ url_for('static', filename='/CSS/tools.css') }}"
+    />
+      <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='/JS/tools.js') }}"
+      ></script>
+      {% endblock %}
