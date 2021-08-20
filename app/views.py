@@ -12,24 +12,29 @@ latex,
 limit,
 diff)
 
+
 views = Blueprint('views', __name__)
 
-
-@views.route('/', methods=['GET', 'POST'])
-@login_required
+@views.route('/')
+@login_required   
 def home():
+    return render_template("home.html",  user=current_user)    
+
+@views.route('/Notebook', methods=['GET', 'POST'])
+@login_required
+def Notebook():
     if request.method == 'POST':
         note = request.form.get('note')
 
         if len(note) < 1:
-            flash('Note is too short!', category='error')
+            flash('The Note is empty!', category='error')
         else:
             new_note = Note(data=note, user_id=current_user.id)
             db.session.add(new_note)
             db.session.commit()
             flash('Note added!', category='success')
 
-    return render_template("home.html", user=current_user)
+    return render_template("Notebook.html", user=current_user)
 
 
 @views.route('/delete-note', methods=['POST'])
@@ -54,6 +59,11 @@ def tools():
 @login_required   
 def math_list():
     return render_template("math-list.html",  user=current_user)    
+
+@views.route('/programing-list')
+@login_required   
+def prgraming_list():
+    return render_template("programing-list.html",  user=current_user)  
 
 @views.route('/Math',methods=['GET', 'POST'])
 @login_required   
@@ -98,8 +108,18 @@ def calc():
         flash('The input field is incorrect/empty, Please check your data.', category='error')
     return render_template("Math.html", result=result, res=res, dintg=dintg, dif=dif, limite=limite, user=current_user)
 
-
-@views.route('/Notebook')
+@views.route('/python')
 @login_required   
-def Notebook():
-    return render_template("Notebook.html",  user=current_user)    
+def python():
+    return render_template("python.html",  user=current_user)  
+
+@views.route('/quiz-python')
+@login_required   
+def quiz_python():
+    return render_template("quiz-python.html",  user=current_user)      
+
+
+@views.route('/compiler-python')
+@login_required   
+def compiler_python():
+    return render_template("python_compiler.html",  user=current_user)    

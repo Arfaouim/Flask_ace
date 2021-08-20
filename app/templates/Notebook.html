@@ -5,6 +5,13 @@
         <h1 align="center" style="font-family:pacifico;">Notebook
             <i class="fa fa-pencil" aria-hidden="true" title="What's up?"> </i>
         </h1>
+
+        <div class="info-msg">
+            <i class="fa fa-info-circle"></i>
+            If you want to write a latex expression, all you need to do is to write the desired text within the following
+            
+            syntaxe \\[The Latex expression\\]
+        </div>
         
             <ul class="list-group list-group-flush" id="notes">
                 {% for note in user.notes %}
@@ -30,5 +37,10 @@
                 <button type="submit" class="btn btn-primary">Add Note</button>
             </div>
         </form>
+
+        <script
+        type="text/javascript"
+        src="{{ url_for('static', filename='/JS/Notebook.js') }}"
+        ></script>    
 
         {% endblock %}

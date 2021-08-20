@@ -1,0 +1,42 @@
+{% extends "base.html" %} 
+{% block title %}Python{% endblock %} 
+{%block username %}Welcome, {{user.first_name}} {%endblock%}
+{% block content%}
+<div class="cont">
+<div class="progress">
+  <div class="progress--bar"></div>
+</div>
+
+<h1>Quiz</h1>
+
+<div class="questionArea">
+  <div class="question">...</div>
+  <div class="options">
+
+  </div>
+</div>
+
+<div class="scoreArea">
+  <img src="https://img.icons8.com/color/96/26e07f/checked--v4.png" class="prizeImage" />
+  <p>Finish!</p>
+  <hr />
+  <div class="scoreText1">--</div>
+  <div class="scorePct">--</div>
+  <div class="scoreText2">--</div>
+  <button>Retry</button>
+</div>
+</div>
+    <!-- Links & Scripts-->  
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link
+    type="text/css"
+    rel="stylesheet"
+    href="{{ url_for('static', filename='/CSS/quiz_python.css') }}"
+    />
+    <script
+    type="text/javascript"
+    src="{{ url_for('static', filename='/JS/quizinpython.js') }}"
+    ></script>
+
+
+{% endblock %}
