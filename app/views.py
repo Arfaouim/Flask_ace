@@ -26,13 +26,13 @@ def Notebook():
     if request.method == 'POST':
         note = request.form.get('note')
 
-        if len(note) < 1:
-            flash('The Note is empty!', category='error')
+        if not note:
+            flash('The Note cannot be empty!', category='error')
         else:
             new_note = Note(data=note, user_id=current_user.id)
             db.session.add(new_note)
             db.session.commit()
-            flash('Note added!', category='success')
+            flash('New note added!', category='success')
 
     return render_template("Notebook.html", user=current_user)
 

@@ -2,6 +2,22 @@
 {% block title %}Python{% endblock %} 
 {%block username %}Welcome, {{user.first_name}} {%endblock%}
 {% block content%}
+ <!-- Info Alert Message -->
+</br>
+<div class="card text-white bg-dark   mb-12" style="font-family: pacifico;" >
+    <div class="card-header"><i class="fa fa-info-circle" aria-hidden="true"></i>  Python </div>
+    <div class="card-body">
+        <h4 class="card-title" style="font-family: pacifico;">What is Python</h4>
+        
+    <details class="card-text" style="font-size: 20px;">
+        <summary>
+            <strong> Python -</strong> is an interpreted, high-level and general-purpose programming language. Created by Guido van Rossum and first released in 1991, Python's design philosophy emphasizes code readability with its notable use of significant whitespace.
+        </summary>
+        more details    
+    </details>  
+    </div>  
+</div>
+
     <div class="container">
 
         <div class="row showcase stm-font">
@@ -26,6 +42,10 @@
         </div>
     </div>
 
+    <div style="color: #059;background-color: #BEF;margin:10px;"class="info-msg">
+        <i class="fa fa-info-circle"></i>
+        Discussion & Comments Block 
+    </div>
     <!-- Links & Scripts-->  
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link
@@ -37,5 +57,26 @@
     type="text/javascript"
     src="{{ url_for('static', filename='/JS/tools.js') }}"
     ></script>
+    
+    <div id="disqus_thread"></div>
+    <script>
+        /**
+        *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+        *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+        s.src = 'https://https-diarydo-herokuapp-com.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    
 
 {% endblock %}
