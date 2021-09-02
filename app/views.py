@@ -123,3 +123,19 @@ def quiz_python():
 @login_required   
 def compiler_python():
     return render_template("python_compiler.html",  user=current_user)    
+
+
+@views.route('/Tostart') 
+def start():
+    return render_template("Tostart.html",  user=current_user)        
+
+@views.route('/Plotting') 
+def plot():
+    return render_template("plotting.html",  user=current_user)            
+    
+@views.route('/plot2d') 
+def plot2d():
+    return render_template("plotting/2dplot.html",  user=current_user)          
+@views.route('/plot3d') 
+def plot3d():
+    return render_template("plotting/3dplot.html",  user=current_user)          

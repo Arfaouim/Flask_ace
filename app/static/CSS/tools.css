@@ -2,7 +2,7 @@ a{
     text-decoration: none;
 }  
 .shadow{
-    box-shadow: 7px 7px 7px #666;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,1)!important;
     position : relative;
     transition : all 0.2s;
     top : 0;

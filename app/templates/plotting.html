@@ -1,0 +1,42 @@
+{% extends "base.html" %} 
+{% block title %}Plot Function{% endblock %} 
+{%block username %}Welcome, {{user.first_name}} {%endblock%}
+{% block content%}
+
+<div class="container">
+
+    <div class="row showcase stm-font">
+        <div class="col-sm-4 hidden-xs">
+            <div class="well shadow up-hover color-hover">
+                <a style="text-decoration: none;" href="plot2d">                        
+                    <h1><i class="fa fa-area-chart"></i></h1>
+                    <h2 style="font-family: pacifico;">Plot 2D </h2>
+                </a>
+            </div>                  
+        </div>
+
+        <div class="col-sm-4 hidden-xs">
+            <div class="well shadow up-hover color-hover">
+                <a style="text-decoration: none;" href="plot3d">                        
+                    <h1><i class="fa fa-cube" aria-hidden="true"></i></h1>
+                    <h2 style="font-family: pacifico;">Plot 3D </h2>
+                </a>
+            </div>                  
+        </div>
+
+
+    </div>
+</div>
+    <!-- Links & Scripts-->  
+
+    <link
+    type="text/css"
+    rel="stylesheet"
+    href="{{ url_for('static', filename='/CSS/tools.css') }}"
+    />
+    <script
+    type="text/javascript"
+    src="{{ url_for('static', filename='/JS/tools.js') }}"
+    ></script>
+
+{% endblock %}
