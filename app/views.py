@@ -144,15 +144,19 @@ def plot3d():
 
 @views.route('/DiscretSum', methods=['GET', 'POST'])
 def DiscretSum():
-    if request.method == 'POST':
-        fun = request.form['fun']
-        var = request.form['var']
-        start = request.form['start']
-        end = request.form['end']
-        exp = expr(request.form['fun'],request.form['var'],request.form['start'],request.form['end'])
-        result  = calc_(fun,var,start,end)
-        simplify = simplified(result)
-        print(simplify)
-        return render_template('DiscretSum.html',exp=exp, result=latex(result), simplify=simplify, user=current_user)
+    try:
+        if request.method == 'POST':
+            fun = request.form['fun']
+            var = request.form['var']
+            start = request.form['start']
+            end = request.form['end']
+            exp = expr(request.form['fun'],request.form['var'],request.form['start'],request.form['end'])
+            result  = calc_(fun,var,start,end)
+            simplify = simplified(result)
+            flash(f'Done ! ', category='success')  
+            return render_template('DiscretSum.html',exp=exp, result=latex(result), simplify=simplify, user=current_user)
+    except Exception as e:    
+        flash(f'Check your input again', category='error')   
+    flash(f'Hey {current_user}! Great Day for some Calclus ', category='success')       
     return render_template("DiscretSum.html",  user=current_user)  
               

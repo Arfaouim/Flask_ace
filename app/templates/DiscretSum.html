@@ -1,28 +1,7 @@
-<html>
-<head>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
-    <title>Home</title>
-    <style>
-        body{
-            padding:0rem;
-        }
-        h1{
-            text-align:center;
-        }
-        .results{
-            font: size 30px;
-            font-family: cursive;
-            background-color:rgb(112, 54, 112);
-            color:white;
-            padding: 1rem;
-        }
-        section hr{
-            border-color:aliceblue;
-        }
-    </style>
-</head>
-<body>
+{% extends "base.html" %} 
+{% block title %}Discret Summation{% endblock %} 
+{%block username %}Welcome, {{user.first_name}} {%endblock%}
+{% block content%}
 <h1>Welcome, Hanen Trash 💩 </h1>
 <hr>
 <div class="container">
@@ -54,21 +33,10 @@
   </form>
 
 </div>
-<section class='results'>
+<div class="alert alert-primary m-2" role="alert">
     <h1>Results :</h1>
     <hr>
     \[{{exp}} = {{result}} = {{simplify}}\]
-</section>
+</div>
 
-<script>
-    MathJax = {
-    tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']]
-    }
-    };
-    </script>
-    <script id="MathJax-script" async
-    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-</script>
-</body>
-</html>
+{% endblock %}
