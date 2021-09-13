@@ -11,6 +11,7 @@ init_printing,
 latex,
 limit,
 diff)
+from .compute import* 
 
 
 views = Blueprint('views', __name__)
@@ -139,3 +140,19 @@ def plot2d():
 @views.route('/plot3d') 
 def plot3d():
     return render_template("plotting/3dplot.html",  user=current_user)          
+
+
+@views.route('/DiscretSum', methods=['GET', 'POST'])
+def DiscretSum():
+    if request.method == 'POST':
+        fun = request.form['fun']
+        var = request.form['var']
+        start = request.form['start']
+        end = request.form['end']
+        exp = expr(request.form['fun'],request.form['var'],request.form['start'],request.form['end'])
+        result  = calc_(fun,var,start,end)
+        simplify = simplified(result)
+        print(simplify)
+        return render_template('DiscretSum.html',exp=exp, result=latex(result), simplify=simplify, user=current_user)
+    return render_template("DiscretSum.html",  user=current_user)  
+              

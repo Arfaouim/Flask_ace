@@ -1,133 +1,140 @@
-@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+/* blue: #006699
+   grey: #777
+*/
 
-body {
-  margin: 0;
-  height: 100%;
-  background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+.pen,
+.pen a {
+  font-family: "Open Sans", sans-serif;
+  color: #006699;
+  font-style: normal;
 }
-svg {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -250px;
-  margin-left: -400px;
-}
-.message-box {
-  height: 200px;
-  width: 380px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -100px;
-  margin-left: 50px;
-  color: #FFF;
-  font-family: Roboto;
-  font-weight: 300;
-}
-.message-box h1 {
-  font-size: 60px;
-  line-height: 46px;
-  margin-bottom: 40px;
-}
-.buttons-con .action-link-wrap {
-  margin-top: 40px;
-}
-.buttons-con .action-link-wrap a {
-  background: #68c950;
-  padding: 8px 25px;
-  border-radius: 4px;
-  color: #FFF;
-  font-weight: bold;
-  font-size: 14px;
-  transition: all 0.3s linear;
-  cursor: pointer;
+.pen a {
   text-decoration: none;
-  margin-right: 10px
 }
-.buttons-con .action-link-wrap a:hover {
-  background: #5A5C6C;
-  color: #fff;
+.pen a:hover {
+  text-decoration: none;
+  color: #333;
 }
-
-#Polygon-1 , #Polygon-2 , #Polygon-3 , #Polygon-4 , #Polygon-4, #Polygon-5 {
-  animation: float 1s infinite ease-in-out alternate;
+.pen .copyright {
+  font-size: 11px;
+  color: #006699;
 }
-#Polygon-2 {
-  animation-delay: .2s; 
-}
-#Polygon-3 {
-  animation-delay: .4s; 
-}
-#Polygon-4 {
-  animation-delay: .6s; 
-}
-#Polygon-5 {
-  animation-delay: .8s; 
+.pen .comment {
+  color: #777;
 }
 
-@keyframes float {
-  100% {
-    transform: translateY(20px);
-  }
+.pen .page-header {
+  border-bottom: 1px solid #006699;
+  margin-top: 16px;
+  margin-bottom: 12px;
+  padding: 12px 0;
 }
-@media (max-width: 450px) {
-  svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -250px;
-    margin-left: -190px;
-  }
-  .message-box {
-    top: 50%;
-    left: 50%;
-    margin-top: -100px;
-    margin-left: -190px;
-    text-align: center;
-  }
+.pen .page-header p.lead {
+  font-size: 18px;
+}
+.pen .page-header h1 {
+  margin-top: 0;
+}
+.pen .page-header h5 {
+  font-style: italic;
+  margin: 0;
 }
 
-.btn {
-  border: none;
-  display: block;
-  text-align: center;
-  cursor: pointer;
-  text-transform: uppercase;
-  outline: none;
-  overflow: hidden;
-  position: relative;
-  color: #fff;
-  font-weight: 700;
-  font-size: 15px;
-  background-color: #222;
-  padding: 17px 60px;
-  margin: 0 auto;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.20);
+.pen .page-header .technology {
+  display: inline;
+  list-style: none;
+  padding: 0;
+}
+.pen .page-header .technology li {
+  display: inline;
+  color: #777;
+  margin: 0 12px 12px 0;
+}
+.pen .page-header .technology li a {
+  color: #777;
+  text-decoration: none;
+}
+.pen .page-header .technology li a:hover {
+  color: #333;
 }
 
-.btn span {
-  position: relative; 
-  z-index: 1;
+.pen .page-footer {
+  min-height: 16px;
+  border-top: 1px solid #006699;
+  margin: 42px 0 0;
+  padding: 12px 0;
+}
+.pen .page-separator {
+  min-height: 3px;
+  border-top: 1px solid #ddd;
+  margin: 14px 0 24px;
+  padding: 0;
 }
 
-.btn:after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  height: 490%;
-  width: 140%;
-  background: #78c7d2;
-  -webkit-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
-  -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
-  transform: translateX(-98%) translateY(-25%) rotate(45deg);
+hr.pen {
+  border-top-color: #c9dbe6;
+  margin: 6px 0;
+}
+hr.pen-alt {
+  border-top-color: #006699;
+  margin: 6px 0;
+}
+hr.pen-tall {
+  border-top-color: #c9dbe6;
+  margin: 24px 0;
 }
 
-.btn:hover:after {
-  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
-  transform: translateX(-9%) translateY(-25%) rotate(45deg);
+.pen-alert {
+  color: #006699;
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NjU3QTRBQUI2OTA1MTFFNDkwOTFENUQyMzA3MTQzODMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NjU3QTRBQUM2OTA1MTFFNDkwOTFENUQyMzA3MTQzODMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2NTdBNEFBOTY5MDUxMUU0OTA5MUQ1RDIzMDcxNDM4MyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2NTdBNEFBQTY5MDUxMUU0OTA5MUQ1RDIzMDcxNDM4MyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PvhzG8UAAAAySURBVHjaYjz86FMaAwLMspHlBTOYGHAAFnSBI48/wyVmIYnDjWUCmQkzFxngtAMgwACAtAhzrNNqnQAAAABJRU5ErkJggg==);
+}
+
+.pen-bkg {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NjU3QTRBQUI2OTA1MTFFNDkwOTFENUQyMzA3MTQzODMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NjU3QTRBQUM2OTA1MTFFNDkwOTFENUQyMzA3MTQzODMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2NTdBNEFBOTY5MDUxMUU0OTA5MUQ1RDIzMDcxNDM4MyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2NTdBNEFBQTY5MDUxMUU0OTA5MUQ1RDIzMDcxNDM4MyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PvhzG8UAAAAySURBVHjaYjz86FMaAwLMspHlBTOYGHAAFnSBI48/wyVmIYnDjWUCmQkzFxngtAMgwACAtAhzrNNqnQAAAABJRU5ErkJggg==);
+}
+
+.pen-box {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NjU3QTRBQUI2OTA1MTFFNDkwOTFENUQyMzA3MTQzODMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NjU3QTRBQUM2OTA1MTFFNDkwOTFENUQyMzA3MTQzODMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo2NTdBNEFBOTY5MDUxMUU0OTA5MUQ1RDIzMDcxNDM4MyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo2NTdBNEFBQTY5MDUxMUU0OTA5MUQ1RDIzMDcxNDM4MyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PvhzG8UAAAAySURBVHjaYjz86FMaAwLMspHlBTOYGHAAFnSBI48/wyVmIYnDjWUCmQkzFxngtAMgwACAtAhzrNNqnQAAAABJRU5ErkJggg==);
+  border: 1px solid #c9dbe6;
+  margin: 0 0 16px;
+  padding: 0;
+}
+.pen-box-minimum {
+  border: 1px solid #c9dbe6;
+  margin: 0 0 16px;
+  padding: 0;
+}
+
+.pen-box .pen-box,
+.pen-box-minimum .pen-box {
+  margin: 0;
+}
+.pen-box p,
+.pen-box-minimum p{
+  margin: 6px;
+}
+.pen-box p:last-child {
+  margin-bottom: 0;
+}
+.pen-bkg h3,
+.pen-bkg h4,
+.pen-bkg-minimum h3,
+.pen-bkg-minimum h4{
+  margin-top: 0;
+}
+
+/*
+@media (min-width: 576px) { 
+}
+@media (min-width: 768px) { 
+}
+@media (min-width: 992px) { 
+}
+@media (min-width: 1200px) { 
+}
+*/
+
+/* test */ 
+.corner-widget-header-text {
+    color: red;
 }

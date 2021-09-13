@@ -1,8 +1,9 @@
 from sqlalchemy.orm import backref
 from . import db
-from flask_login import UserMixin
+from flask_login import UserMixin, current_user
 from sqlalchemy.sql import func
-
+from flask_admin import Admin, AdminIndexView
+from flask_admin.contrib.sqla import ModelView
 
 class Note(db.Model):
     id = db.Column(db.Integer, primary_key=True)

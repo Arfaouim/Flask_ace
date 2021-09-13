@@ -1,0 +1,74 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <title>Home</title>
+    <style>
+        body{
+            padding:0rem;
+        }
+        h1{
+            text-align:center;
+        }
+        .results{
+            font: size 30px;
+            font-family: cursive;
+            background-color:rgb(112, 54, 112);
+            color:white;
+            padding: 1rem;
+        }
+        section hr{
+            border-color:aliceblue;
+        }
+    </style>
+</head>
+<body>
+<h1>Welcome, Hanen Trash 💩 </h1>
+<hr>
+<div class="container">
+<div class="alert alert-primary" role="alert">
+  This is a Application work as following : \[\sum_{i = Start }^{End} Function\] Give it a click if you like.
+</div>
+
+<form action="" method="POST">
+    <div class="form-row">
+      <div class="col-5">
+        <input type="text"  name='fun' class="form-control" placeholder="Function">
+      </div>
+      <div class="col-2">
+        <input type="text"  name='var' class="form-control" placeholder="i">
+      </div>
+      <div class="col">
+        <input type="text" name='start' class="form-control" placeholder="Start">
+      </div>
+      <div class="col">
+        <input type="text" name='end' class="form-control" placeholder="End">
+      </div>
+    </div>
+    <br>
+    <div class="form-row">
+    <div class="col">
+        <input class ="btn btn-primary" type="submit"  class="form-control" >
+    </div>
+    </div>
+  </form>
+
+</div>
+<section class='results'>
+    <h1>Results :</h1>
+    <hr>
+    \[{{exp}} = {{result}} = {{simplify}}\]
+</section>
+
+<script>
+    MathJax = {
+    tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']]
+    }
+    };
+    </script>
+    <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+</body>
+</html>
