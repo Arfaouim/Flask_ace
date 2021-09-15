@@ -1,27 +1,29 @@
 {% extends "base.html" %} 
-{% block title %}Discret Summation{% endblock %} 
+{% block title %}Concrete Summation{% endblock %} 
 {%block username %}Welcome, {{user.first_name}} {%endblock%}
 {% block content%}
-<h1>Welcome, Hanen Trash 💩 </h1>
+<h1>Concrete.Summations </h1>
 <hr>
 <div class="container">
 <div class="alert alert-primary" role="alert">
-  This is a Application work as following : \[\sum_{i = Start }^{End} Function\] Give it a click if you like.
+  <div class="text-primary p-2">Quick Tip</div>
+  <i class="fas fa-info-circle fa-lg"></i>
+  This Application is working as following : \[ \sum_{i = Start }^{End} Function\] Give it a click if you like.
 </div>
 
 <form action="" method="POST">
     <div class="form-row">
       <div class="col-5">
-        <input type="text"  name='fun' class="form-control" placeholder="Function">
+        <input type="text"  name='fun' class="form-control" placeholder="Function" required>
       </div>
       <div class="col-2">
-        <input type="text"  name='var' class="form-control" placeholder="i">
+        <input type="text"  name='var' class="form-control" placeholder="i" required>
       </div>
       <div class="col">
-        <input type="text" name='start' class="form-control" placeholder="Start">
+        <input type="text" name='start' class="form-control" placeholder="Start" required>
       </div>
       <div class="col">
-        <input type="text" name='end' class="form-control" placeholder="End">
+        <input type="text" name='end' class="form-control" placeholder="End" required>
       </div>
     </div>
     <br>
@@ -34,9 +36,19 @@
 
 </div>
 <div class="alert alert-primary m-2" role="alert">
-    <h1>Results :</h1>
+    <h4> <i class="fas fa-info-circle"></i>  Results </h4>
     <hr>
-    \[{{exp}} = {{result}} = {{simplify}}\]
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          \[{{exp}} = {{result}} \]
+        </div>
+        <div class="col-sm">
+          = \[{{simplify}}\]
+        </div>
+      </div>
+    </div>
 </div>
+
 
 {% endblock %}

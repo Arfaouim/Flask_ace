@@ -141,11 +141,13 @@ def plot2d():
 def plot3d():
     return render_template("plotting/3dplot.html",  user=current_user)          
 
+# MATH Categories
 
 @views.route('/DiscretSum', methods=['GET', 'POST'])
+@login_required  
 def DiscretSum():
     try:
-        if request.method == 'POST':
+        if request.method == 'POST':     
             fun = request.form['fun']
             var = request.form['var']
             start = request.form['start']
@@ -157,6 +159,18 @@ def DiscretSum():
             return render_template('DiscretSum.html',exp=exp, result=latex(result), simplify=simplify, user=current_user)
     except Exception as e:    
         flash(f'Check your input again', category='error')   
-    flash(f'Hey {current_user}! Great Day for some Calclus ', category='success')       
+    flash(f'Hey {current_user.first_name} 👋! Great Day for some Calclus ', category='success') 
     return render_template("DiscretSum.html",  user=current_user)  
               
+
+
+# HandlingErrors
+
+@views.route('/Maintanance')
+@login_required  
+def Maintanance():
+    return render_template("HandlingError/maintanance.html",  user=current_user)
+
+@views.route('/Error404') 
+def Error404():
+    return render_template("HandlingError/Error404.html")    

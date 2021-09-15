@@ -53,35 +53,35 @@
         <div class="navbar-nav">
           {% if user.is_authenticated %}
               <!--Home-->
+              <div class="nav-item.nav-link ">
               <a style="display: block;"class="nav-item nav-link" id="home" href="/">
-                <i style="color: white;font-size: 2em;"class='nav-item nav-link fa fa-home' title="Home page"></i>
+                Home
+                <!-- <i style="color: white;font-size: 2em;"class='nav-item nav-link fa fa-home' title="Home page"></i> -->
                 
               </a>
-           
+            </div>
               <!--Tools-->
               
               <a class="nav-item nav-link" id="tools" href="/tools" >
-                <i style="color: white;font-size: 2em;"class='nav-item nav-link fa fa-book' title="Tools page"></i>
+                Tools
                 
               </a>
 
               <!--Backward-->
               
               <a class="nav-item nav-link" id="tools" onclick="history.back()">
-                <i style="color: white;font-size: 2em;"class='nav-item nav-link fa fa-undo' title="move backward"></i>
-                
+               Undo               
               </a>
 
               <!--forward-->
               
-              <a class="nav-item nav-link" id="tools" onclick="history.go(1)" >
-                <i style="color: white;font-size: 2em;"class='nav-item nav-link fa fa-repeat' title="move forward"></i>
-                
+              <a class="nav-item nav-link" id="tools" onclick="history.go(1)" >                
+                Redo
               </a>
             
               <!--Logout-->
               <a class="nav-item nav-link" id="logout" href="/logout">
-                <i style="color: white;font-size: 2em;"class="nav-item nav-link fa fa-sign-out" aria-hidden="true" title="Logout"></i>
+                Logout
                 
               </a>
             
